@@ -3,7 +3,7 @@ const url = "https://randomuser.me/api/?results=12&nat=au&inc=name,location,%20e
 const card_container = document.getElementById('card_container');
 const search_bar = document.getElementById('searchbar');
 const modal = document.getElementById('modal');
-//let people_data = null;
+const modal_btn_close = document.querySelector('.modal-box .close');
 
 //try-block to get from url and turn into json, used for everything?
 async function extractJSON(url){
@@ -66,4 +66,7 @@ search_bar.addEventListener('keyup', ()=>{
     }
 })
 
-modal.style.display = "none";
+//modal.style.display = "none";
+modal_btn_close.addEventListener('click', ()=>{
+    modal.style.display="none";
+})
