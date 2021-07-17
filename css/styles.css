@@ -120,5 +120,8 @@ body footer {
 #modal .modal-box .navigation {
   font-size: 2rem;
 }
+#modal .modal-box .navigation span {
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=styles.css.map */

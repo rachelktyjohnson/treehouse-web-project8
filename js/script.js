@@ -4,6 +4,7 @@ const card_container = document.getElementById('card_container');
 const search_bar = document.getElementById('searchbar');
 const modal = document.getElementById('modal');
 const modal_btn_close = document.querySelector('.modal-box .close');
+const modal_navigation = document.querySelector('.modal .navigation');
 let people_data = null;
 
 //try-block to get from url and turn into json, used for everything?
@@ -99,4 +100,23 @@ function openModal(index){
     let birthday_datetime = new Date(data.dob.date);
     let birthday_string = `${birthday_datetime.getMonth()+1}/${birthday_datetime.getDate()}/${birthday_datetime.getFullYear()}`;
     document.querySelector('.m-dob').innerHTML = `Birthday: ${birthday_string}`;
+    modal_navigation.dataset.index=index;
 }
+
+modal_navigation.addEventListener('click', (e)=>{
+
+    let index = parseInt(e.target.parentNode.dataset.index);
+    if (e.target.className==='m-previous'){
+        if (index===0){
+            openModal(11);
+        } else {
+            openModal(index-1);
+        }
+    } else if (e.target.className==='m-next'){
+        if (index===11){
+            openModal(0);
+        } else {
+            openModal(index+1);
+        }
+    }
+})
