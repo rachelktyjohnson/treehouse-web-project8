@@ -59,6 +59,7 @@ body #main-container main .cards .card {
   padding: 25px;
   border-radius: 5px;
   border: 1px solid #aaa;
+  cursor: pointer;
 }
 body #main-container main .cards .card img {
   width: 120px;
