@@ -40,4 +40,6 @@ getPeople(url)
         card_container.innerHTML = "<h3>Oops, something went wrong!</h3>"
         console.error(e);
     })
-    .finally()
+    .finally(()=>{
+        document.getElementById('loading').remove();
+    })
