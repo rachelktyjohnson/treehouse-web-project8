@@ -1,6 +1,8 @@
 const url = "https://randomuser.me/api/?results=12&nat=au&inc=name,location,%20email,phone,dob,picture"
 
 const card_container = document.getElementById('card_container');
+const search_bar = document.getElementById('searchbar');
+//let people_data = null;
 
 //try-block to get from url and turn into json, used for everything?
 async function extractJSON(url){
@@ -14,11 +16,12 @@ async function extractJSON(url){
 
 async function getPeople(url){
     const peopleJSON = await extractJSON(url);
+    //people_data = peopleJSON.results;
     return (peopleJSON);
 }
 
 function generateHTML(data){
-    console.log(data.results);
+    card_container.innerHTML="";
     data.results.map( person =>{
         const new_card = `
         <div class="card">
@@ -43,3 +46,18 @@ getPeople(url)
     .finally(()=>{
         document.getElementById('loading').remove();
     })
+
+
+search_bar.addEventListener('keyup', ()=>{
+    let search_value = search_bar.value.toLowerCase();
+
+    //loop through the cards and hide the ones that don't match anything. show the ones that do
+    let all_cards = document.querySelectorAll('.card');
+    for (let i=0; i<all_cards.length; i++){
+        if (all_cards[i].textContent.includes(search_value)){
+            all_cards[i].style.display = "flex";
+        } else {
+            all_cards[i].style.display = "none";
+        }
+    }
+})
