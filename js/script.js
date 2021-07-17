@@ -2,6 +2,7 @@ const url = "https://randomuser.me/api/?results=12&nat=au&inc=name,location,%20e
 
 const card_container = document.getElementById('card_container');
 const search_bar = document.getElementById('searchbar');
+const modal = document.getElementById('modal');
 //let people_data = null;
 
 //try-block to get from url and turn into json, used for everything?
@@ -53,7 +54,10 @@ search_bar.addEventListener('keyup', ()=>{
 
     //loop through the cards and hide the ones that don't match anything. show the ones that do
     let all_cards = document.querySelectorAll('.card');
+    let count = 0;
     for (let i=0; i<all_cards.length; i++){
+        count += 1;
+        console.log(all_cards[i].textContent)
         if (all_cards[i].textContent.includes(search_value)){
             all_cards[i].style.display = "flex";
         } else {
@@ -61,3 +65,5 @@ search_bar.addEventListener('keyup', ()=>{
         }
     }
 })
+
+modal.style.display = "none";
