@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono", monospace;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ccc;
+}
+body #main-container {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1400px;
+  flex-direction: column;
+  align-items: center;
+}
+body #main-container header {
+  margin: 50px;
+}
+body #main-container main .cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 25px;
+}
+@media (min-width: 950px) {
+  body #main-container main .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1500px) {
+  body #main-container main .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+body #main-container main .cards .card {
+  width: 450px;
+  display: flex;
+  align-items: center;
+  background: #eee;
+  padding: 25px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+body #main-container main .cards .card img {
+  width: 120px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+body #main-container main .cards .card h2 {
+  font-size: 1.4rem;
+}
+body #main-container main .cards .card p {
+  font-size: 0.9rem;
+  color: #777;
+}
+body footer {
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */

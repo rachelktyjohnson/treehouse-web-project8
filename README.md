@@ -12,3 +12,6 @@ You'll request a JSON object from the API and parse the data so that 12 employee
 You may use jQuery with this project, but other frameworks, libraries, or plugins are not permitted. While there are plugins that can help create a gallery and modal setup, developers need to understand how tools like that work "under the hood." So you'll need to write all your JavaScript or jQuery to create the necessary functionality for this project.
 
 After building this project, you'll have yet another excellent portfolio piece to show off and demonstrate your incredible skills, which will include working with public APIs, making API requests, and asynchronously handling data returned from client requests and displayed in an app.
+
+
+API url used: https://randomuser.me/api/?results=12&nat=au&inc=name,location, email,phone,dob,picture
